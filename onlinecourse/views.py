@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-# <HINT> Import any new Models here
 from .models import Course, Enrollment, Question, Choice, Submission
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, render, redirect
@@ -136,7 +135,7 @@ def show_exam_result(request, course_id, submission_id):
     context['course'] = course
     context['grade'] = total_score
     context['choices'] = choices
-    
+
     return render(request, 'onlinecourse/exam_result_bootstrap.html', context)
 
 
